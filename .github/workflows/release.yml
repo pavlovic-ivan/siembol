@@ -7,7 +7,7 @@ on:
 
 jobs:
   invoke-push:
-    uses: pavlovic-ivan/charts/.github/workflows/invoke-push.yml@master
+    uses: pavlovic-ivan/charts/.github/workflows/invoke-push.yaml@master
     secrets:
       APP_ID: ${{ secrets.APP_ID }}
       APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
