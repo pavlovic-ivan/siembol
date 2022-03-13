@@ -25,4 +25,4 @@ jobs:
         run: |
           helm repo add dummyrepo https://pavlovic-ivan.github.io/charts
           helm search repo siembol
-          helm fetch --verify siembol dummyrepo/siembol --dry-run
+          helm pull --verify siembol dummyrepo/siembol
