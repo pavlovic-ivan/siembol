@@ -7,4 +7,4 @@ on:
 
 jobs:
   helm-install:
-    - run: echo 'Hello'
+    - run: echo 'Hello world'
