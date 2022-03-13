@@ -17,7 +17,7 @@ jobs:
           ${{ secrets.GPG_PUBKEY }}
           EOF
           gpg --batch --import pubring.gpg
-          trap "rm -f pubring.gpg" EXIT
+          mv pubring ~/.gnupg
           gpg --list-keys
           ls -la ~/.gnupg
       - name: Echo
