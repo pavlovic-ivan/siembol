@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo
-        run: echo 'Hello world'
+        run: |
+          helm repo add dummyrepo https://pavlovic-ivan.github.io/charts
+          helm search repo siembol
