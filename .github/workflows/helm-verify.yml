@@ -15,7 +15,7 @@ jobs:
         run: |
           curl https://github.com/pavlovic-ivan/charts/raw/master/pubkey.asc -o pubkey.asc
           ls -la
-          gpg --batch --import pubkey.asc
+          gpg --dearmor --batch --import pubkey.asc
         # run: |
         #   trap "rm -f pubkey.gpg" EXIT
         #   cat > pubkey.gpg << EOF
