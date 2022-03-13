@@ -11,6 +11,10 @@ jobs:
   helm-install:
     runs-on: ubuntu-latest
     steps:
+      - name: Import GPG key
+        run: |
+          cat <(echo -e "${{ secrets.GPG_PUBKEY }}") | gpg --batch --import blake.gpg
+          gpg --list-keys
       - name: Start minikube
         uses: medyagh/setup-minikube@master
       - name: Echo
