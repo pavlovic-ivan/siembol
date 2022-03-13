@@ -1,4 +1,4 @@
-name: Release
+name: Helm Chart Verify
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - .github/workflows/helm-verify.yml
 
 jobs:
-  invoke-helm-verify:
+  helm-verify:
     uses: pavlovic-ivan/charts/.github/workflows/helm-verify.yml@master
     secrets:
       GPG_PUBKEY: ${{ secrets.GPG_PUBKEY }}
