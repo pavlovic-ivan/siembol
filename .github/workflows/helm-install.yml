@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: Import GPG key
         run: |
-          cat > pubkey.gpg << EOF
+          cat > pubring.gpg << EOF
           ${{ secrets.GPG_PUBKEY }}
           EOF
-          trap "rm -f pubkey.gpg" EXIT
-          gpg --batch --import pubkey.gpg
+          gpg --batch --import pubring.gpg
+          trap "rm -f pubring.gpg" EXIT
           gpg --list-keys
           ls -la ~/.gnupg
       - name: Echo
