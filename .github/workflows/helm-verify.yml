@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Import GPG key
         run: |
-          curl https://github.com/pavlovic-ivan/charts/blob/master/pubkey.asc -o pubkey.asc
+          curl -O https://github.com/pavlovic-ivan/charts/blob/master/pubkey.asc
           ls -la
           gpg --batch --import pubkey.asc
         # run: |
