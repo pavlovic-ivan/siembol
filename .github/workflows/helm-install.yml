@@ -13,7 +13,10 @@ jobs:
     steps:
       - name: Import GPG key
         run: |
-          cat ${{ secrets.GPG_PUBKEY }} > pubkey.gpg
+          cat > pubkey.gpg << EOF
+          ${{ secrets.GPG_PUBKEY }}
+          EOF
+          trap "rm -f pubkey.gpg" EXIT
           gpg --batch --import pubkey.gpg
           gpg --list-keys
       - name: Start minikube
