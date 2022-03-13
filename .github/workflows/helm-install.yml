@@ -1,0 +1,10 @@
+name: Release
+
+on:
+  push:
+    paths:
+      - .github/workflows/helm-install.yml
+
+jobs:
+  helm-install:
+    - run: echo 'Hello'
