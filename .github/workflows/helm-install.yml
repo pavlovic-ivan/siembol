@@ -13,14 +13,12 @@ jobs:
     steps:
       - name: Import GPG key
         run: |
+          trap "rm -f pubkey.gpg" EXIT
           cat > pubkey.gpg << EOF
           ${{ secrets.GPG_PUBKEY }}
           EOF
           gpg --batch --import pubkey.gpg
           gpg --export >~/.gnupg/pubring.gpg
-          trap "rm -f pubkey.gpg" EXIT
-          gpg --list-keys
-          ls -la ~/.gnupg
       - name: Echo
         run: |
           helm repo add dummyrepo https://pavlovic-ivan.github.io/charts
