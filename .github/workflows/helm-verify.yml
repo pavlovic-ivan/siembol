@@ -13,8 +13,9 @@ jobs:
     steps:
       - name: Import GPG key
         run: |
-          curl https://raw.githubusercontent.com/pavlovic-ivan/charts/master/pubkey.asc | gpg --import | gpg --export >~/.gnupg/pubring.gpg
-      - name: Add Helm repo
-        run: helm repo add myrepo https://pavlovic-ivan.github.io/charts 
+          curl https://raw.githubusercontent.com/pavlovic-ivan/charts/master/pubkey.asc | gpg --import
+          gpg --export >~/.gnupg/pubring.gpg
       - name: Verify helm chart
-        run: helm pull --verify myrepo/siembol
+        run: |
+          helm repo add myrepo https://pavlovic-ivan.github.io/charts 
+          helm pull --verify myrepo/siembol
