@@ -10,7 +10,7 @@ on:
 jobs:
   helm-verify:
     uses: pavlovic-ivan/charts/.github/workflows/helm-verify.yml@master
-    secrets:
-      GPG_PUBKEY: ${{ secrets.GPG_PUBKEY }}
     with:
       CHART: siembol-0.1.10.tgz
+    secrets:
+      GPG_PUBKEY: ${{ secrets.GPG_PUBKEY }}
