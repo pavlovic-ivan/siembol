@@ -12,10 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Import GPG key
-        run: |
-          curl https://github.com/pavlovic-ivan/charts/blob/master/pubkey.asc -o pubkey.asc
-          ls -la
-          gpg --dearmor --batch --import pubkey.asc
+        run: curl https://github.com/pavlovic-ivan/charts/blob/master/pubkey.asc | gpg --batch --import
         # run: |
         #   trap "rm -f pubkey.gpg" EXIT
         #   cat > pubkey.gpg << EOF
