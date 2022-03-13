@@ -11,6 +11,8 @@ jobs:
   helm-install:
     runs-on: ubuntu-latest
     steps:
+      - name: Start minikube
+        uses: medyagh/setup-minikube@master
       - name: Echo
         run: |
           helm repo add dummyrepo https://pavlovic-ivan.github.io/charts
