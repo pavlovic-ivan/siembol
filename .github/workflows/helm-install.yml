@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Import GPG key
         run: |
-          cat <(echo -e "${{ secrets.GPG_PUBKEY }}") | gpg --batch --import blake.gpg
+          cat ${{ secrets.GPG_PUBKEY }} > pubkey.gpg
+          gpg --batch --import pubkey.gpg
           gpg --list-keys
       - name: Start minikube
         uses: medyagh/setup-minikube@master
