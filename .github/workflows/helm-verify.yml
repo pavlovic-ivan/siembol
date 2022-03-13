@@ -1,0 +1,15 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/helm-verify.yml
+
+jobs:
+  invoke-helm-verify:
+    uses: pavlovic-ivan/charts/.github/workflows/helm-verify.yml@master
+    secrets:
+      GPG_PUBKEY: ${{ secrets.GPG_PUBKEY }}
+      CHART: siembol-0.1.10.tgz

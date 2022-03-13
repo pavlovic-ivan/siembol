@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - .github/workflows/helm-install.yml
+      - .github/workflows/helm-verify.yml
 
 jobs:
   invoke-push:
