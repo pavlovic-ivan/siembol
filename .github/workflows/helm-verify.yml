@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Import GPG key
         run: |
-          curl https://raw.githubusercontent.com/pavlovic-ivan/charts/master/pubkey.asc | gpg --import
+          curl https://raw.githubusercontent.com/pavlovic-ivan/charts/master/pubkey.asc | gpg --dearmor > ~/.gnupg/pubring.gpg
         # run: |
         #   trap "rm -f pubkey.gpg" EXIT
         #   cat > pubkey.gpg << EOF
