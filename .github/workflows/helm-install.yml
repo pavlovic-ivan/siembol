@@ -9,4 +9,5 @@ on:
 
 jobs:
   helm-install:
-    - run: echo 'Hello world'
+    - name: Echo
+      run: echo 'Hello world'
